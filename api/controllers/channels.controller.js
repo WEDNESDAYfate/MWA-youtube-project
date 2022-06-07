@@ -1,6 +1,3 @@
-const { create } = require("domain");
-const { response } = require("express");
-const { status } = require("express/lib/response");
 const mongoose = require("mongoose");
 const Channel = mongoose.model(process.env.DB_CHANNEL_MODEL);
 
@@ -112,24 +109,23 @@ const deleteOne = function (req, res) {
 const _updateOne = function (req, res, updateChannelCallback) {
   console.log("Update One channel");
   const channelId = req.params.channelId;
-  Channel.findById(channelId).
-    exec(function (err, channel) {
-      const response = { status: 204, message: channel };
-      if (err) {
-        console.log("Error find game");
-        response.status = 500;
-        response.message = err;
-      } else if (!channel) {
-        console.log("Channel Id not found");
-        response.status = 404;
-        response.message = { message: "Channel Id not found" };
-      }
-      if (response.status !== 204) {
-        res.status(response.status).json(response.message);
-      } else {
-        updateChannelCallback(req, res, channel, response);
-      }
-    });
+  Channel.findById(channelId).exec(function (err, channel) {
+    const response = { status: 204, message: channel };
+    if (err) {
+      console.log("Error find game");
+      response.status = 500;
+      response.message = err;
+    } else if (!channel) {
+      console.log("Channel Id not found");
+      response.status = 404;
+      response.message = { message: "Channel Id not found" };
+    }
+    if (response.status !== 204) {
+      res.status(response.status).json(response.message);
+    } else {
+      updateChannelCallback(req, res, channel, response);
+    }
+  });
 };
 const fullUpdateOne = function (req, res) {
   console.log("Full Update One Channel Controller");
@@ -138,7 +134,6 @@ const fullUpdateOne = function (req, res) {
     channel.numberOfSubscribers = req.body.numberOfSubscribers;
     channel.startYear = req.body.startYear;
 
-    
     channel.save(function (err, updatedchannel) {
       if (err) {
         response.status = 500;
@@ -173,17 +168,13 @@ const partialUpdateOne = function (req, res) {
   };
   _updateOne(req, res, channelUpdate);
 };
-module.exports = {
-  fullUpdateOne: fullUpdateOne,
-  partialUpdateOne: partialUpdateOne,
-};
+
 
 module.exports = {
   getAll,
   getOne,
   addOne,
   deleteOne,
-  _updateOne,
   fullUpdateOne,
   partialUpdateOne,
 };
