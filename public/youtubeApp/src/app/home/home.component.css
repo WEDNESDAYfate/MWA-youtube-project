@@ -1,0 +1,17 @@
+.title{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: xx-large;
+    margin-top: 1cm;
+    text-align: center;
+
+}
+
+/* video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  } */

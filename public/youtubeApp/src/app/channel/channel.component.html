@@ -1,0 +1,25 @@
+<ul class="title">
+  <li class="name">Name: {{ channel.name }}</li>
+  <li>Subscribers: {{ channel.numberOfSubscribers }}</li>
+  <li>
+    Playlist
+    <ul>
+      <li *ngFor="let playlist of channel.playlist">
+        Title: {{ playlist.title }}
+        <button (click)="onEditPlayList(channel._id, playlist._id)">
+          Edit
+        </button>
+        <button (click)="onPlayListDelete(channel._id, playlist._id)">
+          Delete</button
+        ><br />
+        Number of videos: {{ playlist.numberOfVideos }} <br />
+      </li>
+    </ul>
+  </li>
+
+  <li>Start Year: {{ channel.startYear }}</li>
+</ul>
+
+<button (click)="onUpdate(channel._id)">Update</button>
+<button (click)="onDelete(channel._id)">Delete</button>
+<button (click)="onAddPlayList(channel._id)">Add Playlist</button>

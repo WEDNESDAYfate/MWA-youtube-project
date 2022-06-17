@@ -1,0 +1,15 @@
+<form action="">
+  <div class="title">
+    <p>CHANNEL NAMES</p>
+  </div>
+
+  <div class="channels">
+    <ul>
+      <li *ngFor="let channel of channels">
+        <a routerLink="/channel/{{ channel._id }}">
+          {{ channel.name }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</form>

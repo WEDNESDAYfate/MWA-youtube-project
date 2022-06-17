@@ -118,6 +118,7 @@ const deleteOne = function (req, res) {
 
 const _deletePlaylist = function (req, res, channel) {
   channel.playlist.id(req.params.playlistId).remove();
+
   channel.save(function (err, updateChannel) {
     const response = { status: 204, message: [] };
     if (err) {

@@ -1,7 +1,32 @@
 const mongoose = require("mongoose");
 const Channel = mongoose.model(process.env.DB_CHANNEL_MODEL);
 
+const _nameSearch = function (req, res) {
+  const title = req.query.search;
+  const query = {
+      "title": {$regex: title}
+  };
+  Channel.find(query).exec(function (err, channels) {
+      const response = {
+          status: parseInt(process.env.REST_API_OK, 10),
+          message: channels
+      };
+      if (err) {
+          response.status= parseInt(process.env.REST_API_SYSTEM_ERROR, 10);
+          response.message= err;
+      }
+      res.status(response.status).json(response.message);
+  });
+}
+
+
 const getAll = function (req, res) {
+
+  if (req.query && req.query.search) {
+    _nameSearch(req, res);
+    return;
+}
+
   console.log(process.env.DEFAULT_FIND_OFFSET);
   let offset = parseInt(
     process.env.DEFAULT_FIND_OFFSET,

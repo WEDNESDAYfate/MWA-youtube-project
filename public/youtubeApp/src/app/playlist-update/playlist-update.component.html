@@ -1,0 +1,19 @@
+<p>ENTER PLAYLIST</p>
+<form [formGroup]="playlistForm" (ngSubmit)="updatePlaylist()">
+  <div>
+    <label for="">
+      <input type="text" placeholder="Title" formControlName="title" />
+    </label>
+  </div>
+  <div>
+    <label for="">
+      <input
+        type="number"
+        placeholder="Number of videos"
+        formControlName="numberOfVideos"
+      />
+    </label>
+  </div>
+
+  <button type="submit">Update</button>
+</form>
