@@ -1,0 +1,46 @@
+<p>CREATE ACCOUNT</p>
+<div class="form">
+  <form [formGroup]="registerForm" (ngSubmit)="singUp()">
+    <div class="inter">
+      <input
+        formControlName="name"
+        placeholder="Name"
+        class="form-control"
+        size="40px"
+      />
+    </div>
+    <div class="inter">
+      <input
+        formControlName="username"
+        placeholder="Username"
+        class="form-control"
+      />
+    </div>
+    <div class="inter">
+      <input
+        formControlName="password"
+        placeholder="Password"
+        type="password"
+        class="form-control"
+      />
+    </div>
+    <div class="inter">
+      <input
+        formControlName="repeatPassword"
+        placeholder="Repeat Password"
+        type="password"
+        class="form-control"
+      />
+    </div>
+    <div class="button_add">
+      <button type="submit" class="btn btn-outline-dark">Login</button>
+    </div>
+  </form>
+
+  <div *ngIf="haveSuccess" class="alert alert-success">
+    <span>{{ successMessage }}</span>
+  </div>
+  <div *ngIf="haveError" class="alert alert-danger">
+    <span>{{ errorMessage }}</span>
+  </div>
+</div>

@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Observable, observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Channel, Playlist } from './channels/channels.component';
+import { environment } from 'src/environments/environment.dev';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ChannelDataService {
-  baseUrl: string = 'http://localhost:3000/api';
+  baseUrl: string = environment.REST_BASE_API;
 
   constructor(private http: HttpClient) {}
 

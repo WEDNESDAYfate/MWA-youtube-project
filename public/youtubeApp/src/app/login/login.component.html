@@ -1,0 +1,24 @@
+<p>LOGIN REQUIRED</p>
+<div class="form">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="inter">
+      <input
+        formControlName="username"
+        placeholder="username"
+        class="form-control"
+        size="40px"
+      />
+    </div>
+    <div class="inter">
+      <input
+        formControlName="password"
+        placeholder="password"
+        class="form-control"
+        size="40px"
+      />
+    </div>
+    <div class="button_add">
+      <button type="submit" class="btn btn-outline-dark">Login</button>
+    </div>
+  </form>
+</div>

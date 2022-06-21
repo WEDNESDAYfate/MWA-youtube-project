@@ -37,7 +37,6 @@ export class PlaylistUpdateComponent implements OnInit {
         });
       });
   }
-
   updatePlaylist() {
     const channelId = this.route.snapshot.params['channelId'];
     const playListId = this.route.snapshot.params['playlistId'];

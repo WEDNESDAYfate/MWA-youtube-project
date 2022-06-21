@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
 import { ChannelDataService } from '../channel-data.service';
 import { Channel, Playlist } from '../channels/channels.component';
 
@@ -15,7 +16,8 @@ export class ChannelComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private _router: Router,
-    private channelService: ChannelDataService
+    private channelService: ChannelDataService,
+    private authService: AuthenticationService
   ) {
     this.channel = new Channel('', '', 0);
   }
@@ -49,5 +51,9 @@ export class ChannelComponent implements OnInit {
       .subscribe(() => {
         this.onRefresh();
       });
+  }
+
+  get isLoggedIn() {
+    return this.authService.isLoggedIn;
   }
 }

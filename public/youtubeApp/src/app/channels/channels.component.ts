@@ -33,6 +33,7 @@ export class Playlist {
   #_id!: string;
   #title!: string;
   #numberOfVideos!: number;
+  //#count!: number;
 
   get _id() {
     return this.#_id;
@@ -43,9 +44,13 @@ export class Playlist {
   get numberOfVideos() {
     return this.#numberOfVideos;
   }
+  // get count(){
+  //   return this.#count;
+  // }
   constructor(title: string, numberOfVideos: number) {
     this.#title = title;
     this.#numberOfVideos = numberOfVideos;
+    // this.#count=count;
   }
 }
 

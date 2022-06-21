@@ -1,19 +1,25 @@
 <p>ENTER PLAYLIST</p>
-<form [formGroup]="playlistForm" (ngSubmit)="onAdd()">
-  <div>
-    <label for="">
-      <input type="text" placeholder="Title" formControlName="title" />
-    </label>
-  </div>
-  <div>
-    <label for="">
+<div class="form">
+  <form [formGroup]="playlistForm" (ngSubmit)="onAdd()">
+    <div class="inter">
+      <input
+        type="text"
+        placeholder="Title"
+        formControlName="title"
+        class="form-control"
+        size="40px"
+      />
+    </div>
+    <div class="inter">
       <input
         type="number"
         placeholder="Number of videos"
         formControlName="numberOfVideos"
+        class="form-control"
       />
-    </label>
-  </div>
-
-  <button type="submit">Save</button>
-</form>
+    </div>
+    <div class="button_add">
+      <button type="submit" class="btn btn-outline-success">Save</button>
+    </div>
+  </form>
+</div>

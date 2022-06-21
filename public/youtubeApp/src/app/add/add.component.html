@@ -1,28 +1,33 @@
 <p>ENTER YOUR NEW FAVORITE CHANNEL</p>
-<form [formGroup]="channelForm" (ngSubmit)="save()">
-  <div>
-    <label for="">
-      <input type="text" placeholder="Name" formControlName="name" />
-    </label>
-  </div>
-  <div>
-    <label for="">
+<div class="form">
+  <form [formGroup]="channelForm" (ngSubmit)="save()">
+    <div class="inter">
+      <input
+        type="text"
+        placeholder="Name"
+        formControlName="name"
+        class="form-control"
+        size="40px"
+      />
+    </div>
+    <div class="inter">
       <input
         type="number"
         placeholder="Number Of Subscribers"
         formControlName="numberOfSubscribers"
+        class="form-control"
       />
-    </label>
-  </div>
-  <div>
-    <label for="">
+    </div>
+    <div class="inter">
       <input
         type="number"
         placeholder="Start Year"
         formControlName="startYear"
+        class="form-control"
       />
-    </label>
-  </div>
-
-  <button type="submit">Save</button>
-</form>
+    </div>
+    <div class="button_add">
+      <button class="btn btn-outline-success" type="submit">Save</button>
+    </div>
+  </form>
+</div>

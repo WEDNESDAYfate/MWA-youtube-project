@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  token_storage_key: 'This is key value for saving to local stroge ',
 };
 
 /*

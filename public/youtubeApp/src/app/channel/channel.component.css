@@ -1,11 +1,127 @@
-/* li{
-    font-weight: bold;
-} */
+.title {
+  margin: auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  margin-top: 50px;
+  margin-left: 700px;
+}
+.button_label1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  /* margin-right: 10px; */
+  padding-left: 80px;
+}
+.button_label2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  /* margin-right: 10px; */
+  padding-left: 10px;
+}
+.bottom_button {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 100px;
+  margin-right: 10px;
+}
+.bottom {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.name1 {
+  font-weight: bold;
+}
+.name2 {
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+}
+.value {
+  margin-left: 200px;
+}
 
-.title{
-    margin:auto;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: large;
-    margin-top: 2cm;
-    margin-left: 9cm;
+.boxs {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.box1 {
+  width: 260px;
+  height: 260px;
+  border-radius: 130px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.box2 {
+  margin-left: 1cm;
+  width: 260px;
+  height: 260px;
+  border-radius: 130px;
+  background-color: rgb(183, 243, 204);
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.box3 {
+  margin-left: 1cm;
+  width: 260px;
+  height: 260px;
+  border-radius: 130px;
+  background-color: #fcfc26b0;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.name {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+  font-size: 45px;
+}
+.box1Title {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+}
+.box1Value {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+  margin: 0 auto;
+}
+
+.listboxs {
+  width: 200px;
+  height: 150px;
+  border-radius: 30px;
+  background-color: rgb(64, 97, 76);
+}
+.box2Playlist {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 35px;
+  margin: 0 auto;
+}
+.box3StarYear {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 35px;
+  margin: 0 auto;
+}
+.box3Value {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  margin: 0 auto;
+}
+.row {
+  /* margin: auto; */
+  display: flex;
+  justify-content: center;
 }

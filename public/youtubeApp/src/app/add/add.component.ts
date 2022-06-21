@@ -13,7 +13,6 @@ export class AddComponent implements OnInit {
   channelForm!: FormGroup;
 
   constructor(
-    // private route: ActivatedRoute,
     private _formBuilder: FormBuilder,
     private _router: Router,
     private channelService: ChannelDataService
@@ -25,19 +24,7 @@ export class AddComponent implements OnInit {
       numberOfSubscribers: '',
       startYear: '',
     });
-    // this.getChannel();
   }
-
-  // getChannel() {
-  //   const channelId = this.route.snapshot.params['channelId'];
-  //   this.channelService.getOne(channelId).subscribe((channel) => {
-  //     this.channelForm = this._formBuilder.group({
-  //       name: channel.name,
-  //       numberOfSubscribers: '',
-  //       startYear: '',
-  //     });
-  //   });
-  // }
 
   save() {
     this.channelService.addChannel(this.channelForm.value).subscribe(() => {

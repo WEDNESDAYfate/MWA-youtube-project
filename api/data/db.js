@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 require("./channel-model");
+require("./user-model");
 
 mongoose.connect(process.env.DB_URL);
 

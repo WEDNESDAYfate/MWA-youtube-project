@@ -1,0 +1,20 @@
+.form{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; 
+}
+p{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+}
+.button_add{
+    display: flex;
+    justify-content: center; 
+    padding-top: 20px;
+}
+.inter{
+    padding-top: 10px;
+}

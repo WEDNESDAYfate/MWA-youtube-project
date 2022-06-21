@@ -1,25 +1,88 @@
-<ul class="title">
-  <li class="name">Name: {{ channel.name }}</li>
-  <li>Subscribers: {{ channel.numberOfSubscribers }}</li>
-  <li>
-    Playlist
-    <ul>
-      <li *ngFor="let playlist of channel.playlist">
-        Title: {{ playlist.title }}
-        <button (click)="onEditPlayList(channel._id, playlist._id)">
+<div class="name">{{ channel.name }} CHANNEL</div>
+
+<div class="boxs">
+  <label class="box1">
+    <div class="box1Title">SUBSCRIBERS</div>
+    <div class="box1Value">{{ channel.numberOfSubscribers | number }}</div>
+  </label>
+
+  <label class="box2">
+    <div class="box2Playlist">PLAY LIST</div>
+  </label>
+
+  <label class="box3"
+    ><div class="box3StarYear">START YEAR</div>
+    <div class="box3Value">{{ channel.startYear }}</div>
+  </label>
+</div>
+
+<div class="title">
+  <label class="name1" for=""></label> <label class="value"></label>
+
+  <ul>
+    <li *ngFor="let playlist of channel.playlist">
+      <label class="name2"> Title:</label>
+      <label class="value2">{{ playlist.title }}</label>
+
+      <label for="" class="button_label1">
+        <button
+          *ngIf="isLoggedIn"
+          type="button"
+          class="btn btn-outline-primary"
+          (click)="onEditPlayList(channel._id, playlist._id)"
+        >
           Edit
         </button>
-        <button (click)="onPlayListDelete(channel._id, playlist._id)">
-          Delete</button
-        ><br />
-        Number of videos: {{ playlist.numberOfVideos }} <br />
-      </li>
-    </ul>
-  </li>
+      </label>
 
-  <li>Start Year: {{ channel.startYear }}</li>
-</ul>
+      <label for="" class="button_label2">
+        <button
+          *ngIf="isLoggedIn"
+          type="button"
+          class="btn btn-outline-danger"
+          (click)="onPlayListDelete(channel._id, playlist._id)"
+        >
+          Delete
+        </button></label
+      >
 
-<button (click)="onUpdate(channel._id)">Update</button>
-<button (click)="onDelete(channel._id)">Delete</button>
-<button (click)="onAddPlayList(channel._id)">Add Playlist</button>
+      <br />
+      <label class="name2" for="">Number of videos:</label>
+      <label class="value2"> {{ playlist.numberOfVideos }} </label>
+      <br />
+    </li>
+  </ul>
+</div>
+
+<div class="bottom">
+  <label class="bottom_button">
+    <button
+      *ngIf="isLoggedIn"
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="onUpdate(channel._id)"
+    >
+      Update
+    </button>
+  </label>
+  <label class="bottom_button">
+    <button
+      *ngIf="isLoggedIn"
+      type="button"
+      class="btn btn-outline-danger"
+      (click)="onDelete(channel._id)"
+    >
+      Delete Channel
+    </button>
+  </label>
+  <label for="" class="bottom_button">
+    <button
+      *ngIf="isLoggedIn"
+      type="button"
+      class="btn btn-outline-success"
+      (click)="onAddPlayList(channel._id)"
+    >
+      Add Playlist
+    </button>
+  </label>
+</div>

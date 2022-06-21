@@ -1,15 +1,14 @@
-.title{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: xx-large;
-    margin-top: 1cm;
-    text-align: center;
-
+.title {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 40px;
+  margin-top: 1cm;
+  text-align: center;
 }
 
-.channels{
-    margin:auto;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: large;
-    margin-top: 1cm;
-    margin-left: 9cm;
+.channels {
+  margin: auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  margin-top: 1cm;
+  margin-left: 10cm;
 }

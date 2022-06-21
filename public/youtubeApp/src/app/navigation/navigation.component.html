@@ -27,21 +27,37 @@
         <li>
           <a (click)="onChannel()" class="nav-link px-2 text-white">Channels</a>
         </li>
-        <li><a (click)="onAdd()" class="nav-link px-2 text-white">Add</a></li>
+        <li *ngIf="isLoggedIn">
+          <a (click)="onAdd()" class="nav-link px-2 text-white">Add Channel</a>
+        </li>
       </ul>
 
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-        <input
-          type="search"
-          class="form-control form-control-dark text-white bg-dark"
-          placeholder="Search..."
-          aria-label="Search"
-        />
-      </form>
-
       <div class="text-end">
-        <button type="button" class="btn btn-outline-light me-2">Login</button>
-        <button type="button" class="btn btn-warning">Sign-up</button>
+        <button
+          *ngIf="!isLoggedIn"
+          type="button"
+          class="btn btn-outline-light me-2"
+          routerLink="/login"
+        >
+          Login
+        </button>
+        <span *ngIf="isLoggedIn" class="m-3"> Welcome {{ name }}</span>
+        <button
+          *ngIf="isLoggedIn"
+          type="button"
+          class="btn btn-outline-light me-2"
+          (click)="logout()"
+        >
+          Logout
+        </button>
+        <button
+          *ngIf="!isLoggedIn"
+          type="button"
+          class="btn btn-warning"
+          routerLink="/register"
+        >
+          Sign-up
+        </button>
       </div>
     </div>
   </div>
